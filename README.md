@@ -24,6 +24,11 @@ python3 generate_images_concept_erasure.py  --concept_erasure "naked, nude, bare
 
 ## Evaluating erasure success
 
+You would need to download the correct version of the nudenet detector first, it can be found here [NudeNet Detector](https://github.com/notAI-tech/NudeNet/releases/download/v3.4-weights/320n.onnx)
+
+```
+python3 eval/compute_nudity_rate.py --root /path/to/saved/images
+```
 
 
 ## Erasing the concept of Violence
@@ -35,6 +40,11 @@ python3 generate_images_concept_erasure.py  --concept_erasure "hate, harassment,
 
 ## Evaluating violence removal
 
+First download the prompts.p file from this [link](https://github.com/ml-research/Q16/blob/main/data/ViT-L-14/prompts.p) for the Q16 classifier and keep it inside the ```eval``` folder. Then run the following command:
+
+```
+python3 get_Q16_accuracy.py --path /path/to/saved/images
+```
 
 
 # Erasing Artistic Styles
@@ -63,7 +73,9 @@ python3 generate_images_concept_erasure.py  --concept_erasure "French Horn" --ne
 
 ## Evaluation of erasing objects
 
-
+```
+python3 compute_object_accuracy.py --path /path/to/saved/images --prompts /path/to/prompts/file --target_class "French Horn" 
+```
 
 
 If you used our codebase, please consider citing our work:
