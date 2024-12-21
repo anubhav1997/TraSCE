@@ -70,7 +70,7 @@ def compute_embeddings(image_paths):
 
 
 device='cuda'
-prompt_path = 'data/ViT-L-14/prompts.p'
+prompt_path = 'prompts.p'
 trained_prompts = load_prompts(prompt_path, device=device)
 
 clip = ClipWrapper(device)
