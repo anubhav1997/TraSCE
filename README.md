@@ -2,7 +2,7 @@
 
 This repository contains the official codebase for the paper "TraSCE: Trajectory Steering for Concept Erasure". We provide an approach to erase concepts from conditional diffusion models during inference. You can read more about the approach in our paper [ArXiv](https://arxiv.org/abs/2412.07658)
 
-<img src="Assets/teaser.png" />
+<img src="assets/teaser.png" />
 
 ## Adversarial Benchmark Datasets
 
@@ -46,8 +46,12 @@ python3 generate_images_concept_erasure.py  --concept_erasure "Van Gogh" --negat
 ```
 
 ## Evaluation of artistic style
-
-
+```
+python3 eval/evaluate_artists_using_gpt.py --artist "Van Gogh" --path /path/to/saved/images > output.txt
+```
+```
+python3 eval/compute_final_score.py --path output.txt --artist "Van Gogh"
+```
 
 # Erasing Objects 
 
