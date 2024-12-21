@@ -1,13 +1,7 @@
-
-
-
 import numpy as np 
 import pandas as pd 
 
 
-# big_artist_prompts = {
-#     "": {}
-# }
 
 import argparse 
 parser = argparse.ArgumentParser(
@@ -24,7 +18,7 @@ total_universal = 0
 erased = 0
 total_erased = 0
 
-txtfile = args.path #'safree_big_artist_prompts.txt'#'van_gogh_1_1_big_artist_prompts.txt'
+txtfile = args.path 
 
 if args.artist == 'Kelly McKernan':
     index = 4

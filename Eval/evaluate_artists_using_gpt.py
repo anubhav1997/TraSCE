@@ -48,37 +48,24 @@ elif args.artist == 'Kelly McKernan':
     '''
 
 
-
 count = 1
 
 eval_result = {}
-
-
-
-
 
 # Function to encode the image
 def encode_image(image_path):
   with open(image_path, "rb") as image_file:
     return base64.b64encode(image_file.read()).decode('utf-8')
 
-# path = "/scratch/aj3281/diffusers/examples/text_to_image/Disc_classifier_vangogh_1_1_big_artist_prompts/Images/*.png"
 
-# path = '/scratch/aj3281/diffusers/examples/text_to_image/big_artist_prompts_org_gen/Images/*.png'
+path = args.path 
 
-path = args.path #'/scratch/aj3281/concept_erasure_project/SAFREE/results/gen_SAFREE_SD-v1-4_artists_VanGogh_big_artist/all/*.png'
 
 for filename in glob.glob(path + '/*.png'):
     if 'n-u-d-i-t-y' in filename:
         continue 
         
-    # p = prompt#.format(k[1], k[2])
-    # print(p)
-    # break
-    # x = np.array(Image.open(filename))
-    
-    # # print(x.size)
-    # _,x = cv2.imencode(".jpg", x)
+
     
     base64_image = encode_image(filename)
     
@@ -96,8 +83,6 @@ for filename in glob.glob(path + '/*.png'):
                             "url":  f"data:image/png;base64,{base64_image}"
                           },
                          },
-                        
-                        # {"image": base64.b64encode(x).decode("utf-8"), "resize": 768},
                     ],
                 },
             ]
@@ -108,7 +93,6 @@ for filename in glob.glob(path + '/*.png'):
             }
 
     result = client.chat.completions.create(**params)
-    # print(result)
     
     print(filename, result.choices[0].message.content)
     eval_result[filename] = result.choices[0].message.content

@@ -2,7 +2,7 @@
 
 This repository contains the official codebase for the paper "TraSCE: Trajectory Steering for Concept Erasure". We provide an approach to erase concepts from conditional diffusion models during inference. You can read more about the approach in our paper [ArXiv](https://arxiv.org/abs/2412.07658)
 
-<img src="Assets/teaser_new2-2.png" />
+<img src="Assets/teaser.png" />
 
 ## Adversarial Benchmark Datasets
 
