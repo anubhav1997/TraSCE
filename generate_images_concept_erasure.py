@@ -9,10 +9,7 @@ import torch
 from transformers import CLIPTextModel, CLIPTokenizer
 from diffusers import AutoencoderKL, UNet2DConditionModel, PNDMScheduler, DDPMScheduler, HeunDiscreteScheduler, KarrasVeScheduler, DPMSolverMultistepScheduler, LMSDiscreteScheduler, DDIMScheduler #FlaxKarrasVeOutput
 from tqdm.auto import tqdm
-# from npy_append_array import NpyAppendArray
 import os 
-from heun_scheduler_discriminator import HeunDiscreteScheduler_disc
-# from discriminator import UNet2DModel_discriminator
 from torch import nn 
 import torch.nn.functional as F 
 import json
@@ -20,7 +17,6 @@ import glob
 import argparse
 from transformers import AutoTokenizer
 import pandas as pd 
-
 import open_clip 
 
 
@@ -50,7 +46,7 @@ def parse_args():
     parser.add_argument(
         "--outdir",
         type=str,
-        default="COCO_10k_gen_nudity_/",
+        default="",
     )
     parser.add_argument(
         "--discriminator_guidance_scale",
@@ -177,7 +173,7 @@ if clip == True:
     #     param.requires_grad = False 
     
 
-outdir = args.outdir #laion_two_sets_time_dependent/"
+outdir = args.outdir 
 
 if not os.path.exists(outdir):
     os.makedirs(outdir)
