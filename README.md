@@ -43,7 +43,7 @@ python3 generate_images_concept_erasure.py  --concept_erasure "hate, harassment,
 First download the prompts.p file from this [link](https://github.com/ml-research/Q16/blob/main/data/ViT-L-14/prompts.p) for the Q16 classifier and keep it inside the ```eval``` folder. Then run the following command:
 
 ```
-python3 get_Q16_accuracy.py --path /path/to/saved/images
+python3 eval/get_Q16_accuracy.py --path /path/to/saved/images
 ```
 
 
